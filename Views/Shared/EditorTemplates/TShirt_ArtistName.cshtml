@@ -1,0 +1,28 @@
+@model TShirt_ArtistName
+<form class="form-horizontal">
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.T_shirt_artist_name, "Artist name", new {@class = "col-sm-2 col-form-label"})
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.T_shirt_artist_name, new { @class =  "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.color, "Color", new {@class = "col-sm-2 col-form-label"})
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.color, new { @class =  "form-control" })
+        </div>
+            
+    </div> 
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.size, "Size", new {@class = "col-sm-2 col-form-label"})
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.size, new { @class =  "form-control" })
+        </div>
+            
+    </div> 
+</form>
