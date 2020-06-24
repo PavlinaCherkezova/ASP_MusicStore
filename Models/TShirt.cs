@@ -17,7 +17,7 @@ namespace MusicStore.Models
         }
 
         [XmlElement ("T_shirt_artist_name")]
-        public TShirt_ArtistName TShirt_ArtistName;
+        public TShirt_ArtistName TShirt_ArtistName { get; set; }
 
          [XmlElement ("T-shirt_image")]
         public string T_shirt_image { get; set; }

@@ -14,12 +14,5 @@ namespace MusicStore.Models
             this.isValid = false;
             this.isAlreadyAdded = false;
         }
-        public FileStatus(string fileName, string status, bool isValid, bool isAlreadyAdded){
-            this.fileName = fileName;
-            this.status = status;
-            this.isValid = isValid;
-            this.isAlreadyAdded = isAlreadyAdded;
-        }
-
     }
 }

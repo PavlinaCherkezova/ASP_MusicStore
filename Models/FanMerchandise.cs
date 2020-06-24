@@ -7,6 +7,6 @@ namespace MusicStore.Models
     public class FanMerchandise
     {
         [XmlElement ("T-shirts")]
-        public TShirts TShirts;
+        public TShirts TShirts { get; set; }
     }
 }

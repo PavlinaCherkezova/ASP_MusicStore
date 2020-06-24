@@ -15,8 +15,14 @@ namespace MusicStore.Controllers
 {
     public class PagesController : Controller
     {
-        public const string loadedXMLsLocation = "C:/Users/polic/Desktop/uni/asp/MusicStore/loadXMLs";
-        public const string XSDSchema = "C:/Users/polic/Desktop/uni/asp/MusicStore/XSD schema/MusicStore.xsd";
+        private const string loadedXMLsLocation = "C:/Users/polic/Desktop/uni/asp/MusicStore/loadXMLs";
+        private const string XSDSchema = "C:/Users/polic/Desktop/uni/asp/MusicStore/XSD schema/MusicStore.xsd";
+        private readonly DBAccsessService _dBAccsessService;
+        private static List<FileStatus> file
+        public PagesController(DBAccsessService dBAccsessService)
+        {
+            _dBAccsessService = dBAccsessService;
+        }
         public IActionResult Create ()
         {
             return View();
@@ -29,24 +35,8 @@ namespace MusicStore.Controllers
         }
 
         [HttpPost]
-        public ActionResult Form(MusicShopForm input)
-        {
-            var items = input.DVD;
-            ViewData["DVD.DVD_artist_name"] = items;
-
-            return View("Create");
-            //return Content($"Hello {input.DVD.DVD_price}");
-        } 
-
-        [HttpPost]
         public ActionResult CreateNewEntity (MusicShopForm input)
         {
-
-            Console.WriteLine("here");
-            Console.WriteLine(input.DVD.DVD_album_name.DVD_albumName);
-            Console.WriteLine(input.DVD.DVD_album_name.number_songs);
-            Console.WriteLine(input.DVD.DVD_price);
-
             MusicShop entity = new MusicShop();
             
             if(input.CD != null) {
@@ -71,37 +61,61 @@ namespace MusicStore.Controllers
             return View("Form");
         }
 
-        public void saveData (MusicShop entity){
+        private void saveData (MusicShop entity) {
             var directory = new DirectoryInfo("C:/Users/polic/Desktop/uni/asp/MusicStore/genaretedXMLs");
-            var lastFileIndex = directory.GetFiles().Length;
-            var file = directory.GetFiles("*" + lastFileIndex + ".xml");
+            var guid = Guid.NewGuid().ToString();
+            var fileName = $"{directory}/xml_{guid}.xml";
 
-            Serialization.serialize(entity);
+            Serialization.serialize(entity, fileName);
+            if (entity.CDs != null && entity.CDs.CDList != null)
+            {
+                foreach (var cd in entity.CDs.CDList)
+                {
+                    _dBAccsessService.SaveCDToDB(cd);
+                }
+                _dBAccsessService.saveChanges(); //fileStatus - isAlreadyAdded
+            }
+       
         }
 
-        public ActionResult loadFiles (){
+        [HttpGet]
+        public ActionResult LoadFiles () {
             string[] fileNames = Directory.GetFiles(loadedXMLsLocation).Select(file => Path.GetFileName(file)).ToArray();
             List<FileStatus> fileStatuses = new List<FileStatus>();
-    
-            foreach(string fileName in fileNames){
-                FileStatus entity;
+            var foo = new FileStatus();
+
+            foreach (string fileName in fileNames){
+                FileStatus entity = null;
                 
                 if(ValidateXMLByScheme.isValidated(XSDSchema, fileName)){
                     MusicShop DBentity = Serialization.deserialize(fileName);
-
-                    if(DBService.saveToDB(DBentity)){
-                        entity = new FileStatus(fileName, "Success", true, true);
-                    }else {
-                        entity = new FileStatus(fileName, "Success", true, false);
+                    if(DBentity.CDs != null && DBentity.CDs.CDList != null)
+                    {
+                        foreach(var cd in DBentity.CDs.CDList)
+                        {
+                            _dBAccsessService.SaveCDToDB(cd);
+                        }
+                        _dBAccsessService.saveChanges();
                     }
+                    //if(DBAccsessService.saveToDB(DBentity)){
+                    //    entity = new FileStatus(fileName, "Success", true, true);
+                    //}else {
+                    //    entity = new FileStatus(fileName, "Success", true, false);
+                    //}
                 }else {
-                    entity = new FileStatus(fileName, "Failure", false, false);
+                   // entity = new FileStatus(fileName, "Failure", false, false);
                 }
 
                 fileStatuses.Add(entity);
             }
 
-            return View("LoadedFiles");
+            return View("GetLoadedFiles", foo);
+        }
+        [HttpGet]
+        public ActionResult GetLoadedFiles()
+        {
+            var foo = new FileStatus();
+            return View(foo); 
         }
     }
 }

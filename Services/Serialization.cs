@@ -10,16 +10,8 @@ namespace MusicStore.Services
     public class Serialization
     {
         const string directory = "C:/Users/polic/Desktop/uni/asp/MusicStore/genaretedXMLs";
-        const string baseFile = "C:/Users/polic/Desktop/uni/asp/MusicStore/genaretedXMLs/xml";
-        static int fileIndex = 0;
 
-        public static void serialize (MusicShop entity){
-            //XmlSerializer serializer = new XmlSerializer(typeof (MusicShop));
-
-            // using (FileStream fileStream = new FileStream(baseFile + (++fileIndex) + ".xml", FileMode.Open)){
-            //     serializer.Serialize(fileStream, entity);
-            // }
-
+        public static void serialize (MusicShop entity, string fileName){
             XmlDocument xmlDocument = new XmlDocument();
             XmlSerializer serializer = new XmlSerializer(typeof (MusicShop));
             using (MemoryStream stream = new MemoryStream())
@@ -27,7 +19,7 @@ namespace MusicStore.Services
                 serializer.Serialize(stream, entity);
                 stream.Position = 0;
                 xmlDocument.Load(stream);
-                xmlDocument.Save(baseFile + (++fileIndex) + ".xml");
+                xmlDocument.Save(fileName);
             }
         }
 

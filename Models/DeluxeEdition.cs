@@ -25,10 +25,10 @@ namespace MusicStore.Models
         }
 
         [XmlElement ("Deluxe_album_name")]
-        public Deluxe_AlbumName Deluxe_album_name;
+        public Deluxe_AlbumName Deluxe_album_name { get; set; }
 
         [XmlElement ("Deluxe_artist_name")]
-        public Deluxe_ArtistName Deluxe_artist_name;
+        public Deluxe_ArtistName Deluxe_artist_name { get; set; }
         public string Deluxe_label_name { get; set; }
 
         [DataType(DataType.Date)]

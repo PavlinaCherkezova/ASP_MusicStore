@@ -1,5 +1,6 @@
 using System;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace MusicStore.Models
 {
@@ -10,5 +11,14 @@ namespace MusicStore.Models
         
         [XmlAttribute ("numberSongs")]
         public int number_songs { get; set; }
+
+        public CD_AlbumName(){
+            this.CD_album_name = "";
+            this.number_songs = 0;
+        }
+        public CD_AlbumName(string CD_album_name, int number_songs){
+            this.CD_album_name = CD_album_name;
+            this.number_songs = number_songs;
+        }
     }
 }

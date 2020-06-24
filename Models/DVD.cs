@@ -25,10 +25,10 @@ namespace MusicStore.Models
         }
 
         [XmlElement ("DVD_album_name")]
-        public DVD_AlbumName DVD_album_name;
+        public DVD_AlbumName DVD_album_name { get; set; }
 
         [XmlElement ("DVD_artist_name")]
-        public DVD_ArtistName DVD_artist_name;
+        public DVD_ArtistName DVD_artist_name { get; set; }
         public string DVD_label_name { get; set; }
 
         [DataType(DataType.Date)]

@@ -25,10 +25,10 @@ namespace MusicStore.Models
         }
 
         [XmlElement ("Vinyl_album_name")]
-        public Vinyl_AlbumName Vinyl_album_name;
+        public Vinyl_AlbumName Vinyl_album_name { get; set; }
 
         [XmlElement ("Vinyl_artist_name")]
-        public Vinyl_ArtistName Vinyl_artist_name;
+        public Vinyl_ArtistName Vinyl_artist_name { get; set; }
         public string Vinyl_label_name { get; set; }
 
         [DataType(DataType.Date)]

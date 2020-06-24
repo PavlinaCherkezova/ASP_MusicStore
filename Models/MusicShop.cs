@@ -13,7 +13,7 @@ namespace MusicStore.Models
             this.DeluxeEditions = new DeluxeEditions();
             this.FanMerchandise = new FanMerchandise();
         }
-        public MusicShop(CDs CDs, DVDs dVDs, Vinyls Vinyls, DeluxeEditions DeluxeEditions, FanMerchandise FanMerchandise){
+        public MusicShop(CDs CDs, DVDs DVDs, Vinyls Vinyls, DeluxeEditions DeluxeEditions, FanMerchandise FanMerchandise){
             this.CDs = CDs;
             this.DVDs = DVDs;
             this.Vinyls = Vinyls;

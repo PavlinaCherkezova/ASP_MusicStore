@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<MusicShop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CDs>
+    <CD>
+      <CD_album_name numberSongs="3">ds</CD_album_name>
+      <CD_artist_name autograph="true">vmdkbmd</CD_artist_name>
+      <CD_label_name>dfgdf</CD_label_name>
+      <CD_release_date>2020-06-26T00:00:00</CD_release_date>
+      <CD_price>224</CD_price>
+      <CD_image>fdbfd</CD_image>
+    </CD>
+  </CDs>
+  <DVDs />
+  <Vinyls />
+  <DeluxeEditions />
+  <FanMerchandise />
+</MusicShop>

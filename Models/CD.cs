@@ -25,10 +25,10 @@ namespace MusicStore.Models
         }
 
         [XmlElement ("CD_album_name")]
-        public CD_AlbumName CD_album_name;
+        public CD_AlbumName CD_album_name { get; set; }
 
         [XmlElement ("CD_artist_name")]
-        public CD_ArtistName CD_artist_name;
+        public CD_ArtistName CD_artist_name { get; set; }
         public string CD_label_name { get; set; }
 
         [DataType(DataType.Date)]
