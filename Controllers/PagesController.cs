@@ -8,12 +8,15 @@ using Microsoft.Extensions.Logging;
 using MusicStore.Models;
 using MusicStore.Services;
 using System.IO;
+using System.Collections;
 
 
 namespace MusicStore.Controllers
 {
     public class PagesController : Controller
     {
+        public const string loadedXMLsLocation = "C:/Users/polic/Desktop/uni/asp/MusicStore/loadXMLs";
+        public const string XSDSchema = "C:/Users/polic/Desktop/uni/asp/MusicStore/XSD schema/MusicStore.xsd";
         public IActionResult Create ()
         {
             return View();
@@ -64,6 +67,7 @@ namespace MusicStore.Controllers
 
             saveData(entity);
             ModelState.Clear();
+
             return View("Form");
         }
 
@@ -73,6 +77,31 @@ namespace MusicStore.Controllers
             var file = directory.GetFiles("*" + lastFileIndex + ".xml");
 
             Serialization.serialize(entity);
+        }
+
+        public ActionResult loadFiles (){
+            string[] fileNames = Directory.GetFiles(loadedXMLsLocation).Select(file => Path.GetFileName(file)).ToArray();
+            List<FileStatus> fileStatuses = new List<FileStatus>();
+    
+            foreach(string fileName in fileNames){
+                FileStatus entity;
+                
+                if(ValidateXMLByScheme.isValidated(XSDSchema, fileName)){
+                    MusicShop DBentity = Serialization.deserialize(fileName);
+
+                    if(DBService.saveToDB(DBentity)){
+                        entity = new FileStatus(fileName, "Success", true, true);
+                    }else {
+                        entity = new FileStatus(fileName, "Success", true, false);
+                    }
+                }else {
+                    entity = new FileStatus(fileName, "Failure", false, false);
+                }
+
+                fileStatuses.Add(entity);
+            }
+
+            return View("LoadedFiles");
         }
     }
 }

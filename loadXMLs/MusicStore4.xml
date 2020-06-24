@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Vinyls>
+        <Vinyl>
+            <Vinyl_album_name>Kylie Christmas </Vinyl_album_name>
+            <Vinyl_artist_name>Kylie Minogue</Vinyl_artist_name>
+            <Vinyl_label_name>Virginia Records</Vinyl_label_name>
+            <Vinyl_release_date>2010-05-04</Vinyl_release_date>
+            <Vinyl_price>40.50</Vinyl_price>
+            <Vinyl_image>kylie-minogue-kylie-christmas.jpg</Vinyl_image>
+        </Vinyl>
+        <Vinyl>
+            <Vinyl_album_name>Kind Of Blue</Vinyl_album_name>
+            <Vinyl_artist_name>Miles Davis</Vinyl_artist_name>
+            <Vinyl_label_name>Universal Music</Vinyl_label_name>
+            <Vinyl_release_date>2010-05-04</Vinyl_release_date>
+            <Vinyl_price>34.65</Vinyl_price>
+            <Vinyl_image>miles-davis-kind-of-blue.jpg</Vinyl_image>
+        </Vinyl>
+    </Vinyls>
+    <DeluxeEditions>
+        <DeluxeEdition>
+            <Deluxe_album_name>Gold</Deluxe_album_name>
+            <Deluxe_artist_name autograph="false">Cher</Deluxe_artist_name>
+            <Deluxe_label_name>Virginia Records</Deluxe_label_name>
+            <Deluxe_release_date>2001-05-04</Deluxe_release_date>
+            <Deluxe_price>19.40</Deluxe_price>
+            <Deluxe_image>cher-gold-2.jpg</Deluxe_image>
+        </DeluxeEdition>
+    </DeluxeEditions>
+    <FanMerchandise>
+        <T-shirts>
+            <T-shirt>
+                <T_shirt_artist_name color="gray" size="0">The Rolling Stones</T_shirt_artist_name>
+                <T-shirt_price>30.40</T-shirt_price>
+                <T-shirt_image>rolling-stones.jpg</T-shirt_image>
+            </T-shirt>
+            <T-shirt>
+                <T_shirt_artist_name color="black" size="3"> Bring Me The Horizon</T_shirt_artist_name>
+                <T-shirt_price>10.20</T-shirt_price>
+                <T-shirt_image>bring-me-the-horizon.jpg</T-shirt_image>
+            </T-shirt>
+        </T-shirts>
+    </FanMerchandise>
+</Musicshop>

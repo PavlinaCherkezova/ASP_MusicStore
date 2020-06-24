@@ -47,3 +47,4 @@ C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Sh
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Pages\Create.cshtml.g.cs
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\EditorTemplates\DVD_AlbumName.cshtml.g.cs
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\EditorTemplates\DVD.cshtml.g.cs
+C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Pages\LoadedFiles.cshtml.g.cs

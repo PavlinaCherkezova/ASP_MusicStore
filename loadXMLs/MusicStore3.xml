@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CDs>
+        <CD>
+            <CD_album_name>The Day Is My Enemy</CD_album_name>
+            <CD_artist_name>The Prodigy</CD_artist_name>
+            <CD_label_name>Sony Music</CD_label_name>
+            <CD_release_date>2006-05-04</CD_release_date>
+            <CD_price>37.80</CD_price>
+            <CD_image>the-prodigy-the-day-is-my-enemy.jpg</CD_image>
+        </CD>
+    </CDs>
+    <DeluxeEditions>
+        <DeluxeEdition>
+            <Deluxe_album_name numberAlbums="2" numberSongs="37">Greatest Hits</Deluxe_album_name>
+            <Deluxe_artist_name autograph="false">Guns N' Roses</Deluxe_artist_name>
+            <Deluxe_label_name>Universal Music</Deluxe_label_name>
+            <Deluxe_release_date>2003-05-04</Deluxe_release_date>
+            <Deluxe_price>19.30</Deluxe_price>
+            <Deluxe_image>guns-n-roses-greatest-hits.jpg</Deluxe_image>
+        </DeluxeEdition>
+    </DeluxeEditions>
+</Musicshop>

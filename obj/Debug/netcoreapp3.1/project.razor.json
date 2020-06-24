@@ -20546,6 +20546,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\polic\\Desktop\\uni\\asp\\MusicStore\\Views\\Pages\\LoadedFiles.cshtml",
+      "TargetPath": "Views\\Pages\\LoadedFiles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\polic\\Desktop\\uni\\asp\\MusicStore\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

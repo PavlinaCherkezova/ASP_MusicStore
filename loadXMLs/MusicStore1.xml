@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <CDs>
+        <CD>
+            <CD_album_name>Vita Ce Ne </CD_album_name>
+            <CD_artist_name>Eros Ramazzotti</CD_artist_name>
+            <CD_label_name>Sony Music</CD_label_name>
+            <CD_release_date>2006-05-04</CD_release_date>
+            <CD_price>13.50</CD_price>
+            <CD_image>eros-ramazzotti-vita-ce-ne.jpg</CD_image>
+        </CD>
+        <CD>
+            <CD_album_name>I will always love you</CD_album_name>
+            <CD_artist_name>Whitney Houston</CD_artist_name>
+            <CD_label_name>Sony Music</CD_label_name>
+            <CD_release_date>2000-05-04</CD_release_date>
+            <CD_price>17.30</CD_price>
+            <CD_image>whitney-houston-the-best.jpg</CD_image>
+        </CD>
+    </CDs>
+    <DVDs>
+        <DVD>
+            <DVD_album_name>Songs From The Road</DVD_album_name>
+            <DVD_artist_name>Leonard Cohen</DVD_artist_name>
+            <DVD_label_name>Virginia Records</DVD_label_name>
+            <DVD_release_date>2004-05-04</DVD_release_date>
+            <DVD_price>19.50</DVD_price>
+            <DVD_image>leonard-cohen-songs-from-the-road.jpg</DVD_image>
+        </DVD>
+        <DVD>
+            <DVD_album_name>#1's</DVD_album_name>
+            <DVD_artist_name>Mariah Carey</DVD_artist_name>
+            <DVD_label_name>Virginia Records</DVD_label_name>
+            <DVD_release_date>2014-05-04</DVD_release_date>
+            <DVD_price>29.40</DVD_price>
+            <DVD_image>mariah-carey-1.jpg</DVD_image>
+        </DVD>
+    </DVDs>
+    <Vinyls>
+        <Vinyl>
+            <Vinyl_album_name>My Way</Vinyl_album_name>
+             <Vinyl_artist_name>Frank Sinatra</Vinyl_artist_name>
+            <Vinyl_label_name>Universal Music</Vinyl_label_name>
+            <Vinyl_release_date>2006-05-04</Vinyl_release_date>
+            <Vinyl_price>27.80</Vinyl_price>
+            <Vinyl_image>frank-sinatra-my-way.jpg</Vinyl_image>
+        </Vinyl>
+        <Vinyl>
+            <Vinyl_album_name>25</Vinyl_album_name>
+            <Vinyl_artist_name>Adele </Vinyl_artist_name>
+            <Vinyl_label_name>Universal Music</Vinyl_label_name>
+            <Vinyl_release_date>2007-05-04</Vinyl_release_date>
+            <Vinyl_price>28.90</Vinyl_price>
+            <Vinyl_image>adele-25.jpg</Vinyl_image>
+        </Vinyl>
+    </Vinyls>
+    <DeluxeEditions>
+        <DeluxeEdition>
+                <Deluxe_album_name numberAlbums="2">Live At The Olympia Paris</Deluxe_album_name>
+            <Deluxe_artist_name autograph="false">Sting</Deluxe_artist_name>
+            <Deluxe_label_name>Universal Music</Deluxe_label_name>
+            <Deluxe_release_date>2009-05-04</Deluxe_release_date>
+            <Deluxe_price>15.70</Deluxe_price>
+            <Deluxe_image>sting-live-at-the-olympia-paris-paris.jpg</Deluxe_image>
+        </DeluxeEdition>
+        <DeluxeEdition>
+            <Deluxe_album_name numberAlbums="1" numberSongs="27">Live At Paramount</Deluxe_album_name>
+            <Deluxe_artist_name autograph="false">Nirvana </Deluxe_artist_name>
+            <Deluxe_label_name>Universal Music</Deluxe_label_name>
+            <Deluxe_release_date>2016-05-04</Deluxe_release_date>
+            <Deluxe_price>18.40</Deluxe_price>
+            <Deluxe_image>nirvana-live-at-paramount.jpg</Deluxe_image>
+        </DeluxeEdition>
+    </DeluxeEditions>
+    <FanMerchandise>
+        <T-shirts>
+            <T-shirt>
+                <T_shirt_artist_name color="gray" size="2">Rush</T_shirt_artist_name>
+                <T-shirt_price>17.40</T-shirt_price>
+                <T-shirt_image>bring-me-the-horizon.jpg</T-shirt_image>
+            </T-shirt>
+            <T-shirt>
+                <T_shirt_artist_name color="white">The Beatles</T_shirt_artist_name>
+                <T-shirt_price>14.50</T-shirt_price>
+                <T-shirt_image>the-beatles.jpg</T-shirt_image>
+            </T-shirt>
+        </T-shirts>
+    </FanMerchandise>
+</Musicshop>
