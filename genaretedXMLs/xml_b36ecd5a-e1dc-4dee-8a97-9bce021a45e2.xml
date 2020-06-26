@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CDs>
+    <CD>
+      <CD_album_name numberSongs="0" />
+      <CD_artist_name autograph="false">bjsjcksnv</CD_artist_name>
+      <CD_release_date>2020-06-10T00:00:00</CD_release_date>
+      <CD_price>0</CD_price>
+    </CD>
+  </CDs>
+  <DVDs />
+  <Vinyls />
+  <DeluxeEditions />
+  <FanMerchandise>
+    <T-shirts />
+  </FanMerchandise>
+</Musicshop>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CDs>
+    <CD>
+      <CD_album_name numberSongs="0" />
+      <CD_artist_name autograph="false" />
+      <CD_release_date>0001-01-01T00:00:00</CD_release_date>
+      <CD_price>0</CD_price>
+    </CD>
+  </CDs>
+  <DVDs>
+    <DVD>
+      <DVD_album_name numberSongs="0" />
+      <DVD_artist_name autograph="false" />
+      <DVD_release_date>0001-01-01T00:00:00</DVD_release_date>
+      <DVD_price>0</DVD_price>
+    </DVD>
+  </DVDs>
+  <Vinyls>
+    <Vinyl>
+      <Vinyl_album_name numberSongs="0" />
+      <Vinyl_artist_name autograph="false" />
+      <Vinyl_release_date>0001-01-01T00:00:00</Vinyl_release_date>
+      <Vinyl_price>0</Vinyl_price>
+    </Vinyl>
+  </Vinyls>
+  <DeluxeEditions>
+    <DeluxeEdition>
+      <Deluxe_album_name numberSongs="0" />
+      <Deluxe_artist_name autograph="false" />
+      <Deluxe_release_date>0001-01-01T00:00:00</Deluxe_release_date>
+      <Deluxe_price>0</Deluxe_price>
+    </DeluxeEdition>
+  </DeluxeEditions>
+  <FanMerchandise>
+    <T-shirts>
+      <T-shirt>
+        <T_shirt_artist_name size="435">vsbdsbsd</T_shirt_artist_name>
+        <T-shirt_price>0</T-shirt_price>
+      </T-shirt>
+    </T-shirts>
+  </FanMerchandise>
+</Musicshop>

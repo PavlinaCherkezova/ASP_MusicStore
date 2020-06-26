@@ -7,6 +7,6 @@ namespace MusicStore.Models
     public class DeluxeEditions
     {
         [XmlElement ("DeluxeEdition")]
-        public List<DeluxeEdition> DeluxeEditionList = new List<DeluxeEdition>();
+        public List<Deluxe> DeluxeEditionList = new List<Deluxe>();
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/C:/Users/polic/Desktop/uni/asp/MusicStore/XSD%20schema/MusicStore.xsd">
+    <Vinyls>
+        <Vinyl>
+            <Vinyl_album_name numberSongs="30">Chilombo</Vinyl_album_name>
+            <Vinyl_artist_name autograph="true">Jhené Aiko</Vinyl_artist_name>
+            <Vinyl_label_name>Sony</Vinyl_label_name>
+            <Vinyl_release_date>2019-05-04</Vinyl_release_date>
+            <Vinyl_price>59</Vinyl_price>
+            <Vinyl_image>chilombo.jpg</Vinyl_image>
+        </Vinyl>
+    </Vinyls>
+    <DeluxeEditions>
+        <DeluxeEdition>
+            <Deluxe_album_name numberAlbums="1">Time Served</Deluxe_album_name>
+            <Deluxe_artist_name autograph="true">Moneybagg Yo</Deluxe_artist_name>
+            <Deluxe_label_name>Universal</Deluxe_label_name>
+            <Deluxe_release_date>2019-05-04</Deluxe_release_date>
+            <Deluxe_price>43</Deluxe_price>
+            <Deluxe_image>yo.jpg</Deluxe_image>
+        </DeluxeEdition>
+    </DeluxeEditions>
+    <FanMerchandise>
+        <T-shirts>
+            <T-shirt>
+                <T_shirt_artist_name size="4">Juice Wrld</T_shirt_artist_name>
+                <T-shirt_price>30</T-shirt_price>
+                <T-shirt_image>wrld3423.jpg</T-shirt_image>
+            </T-shirt>
+        </T-shirts>
+    </FanMerchandise>
+</Musicshop>

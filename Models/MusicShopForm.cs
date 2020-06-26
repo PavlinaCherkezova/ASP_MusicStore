@@ -9,9 +9,9 @@ namespace MusicStore.Models
 
         public DVD DVD  { get; set; }
 
-        public Vinyl Vinyl { get; set; }
+        public VinylModel Vinyl { get; set; }
 
-        public DeluxeEdition DeluxeEdition { get; set; }
+        public Deluxe DeluxeEdition { get; set; }
         
         public T_Shirt T_Shirt { get; set; }
        

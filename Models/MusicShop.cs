@@ -3,17 +3,19 @@ using System.Xml.Serialization;
 
 namespace MusicStore.Models
 {
-    [Serializable, XmlRoot ("MusicShop")]
+    [Serializable, XmlRoot ("Musicshop")]
     public class MusicShop
     {
-        public MusicShop (){
+        public MusicShop ()
+        {
             this.CDs = new CDs();
             this.DVDs = new DVDs();
             this.Vinyls = new Vinyls();
             this.DeluxeEditions = new DeluxeEditions();
             this.FanMerchandise = new FanMerchandise();
         }
-        public MusicShop(CDs CDs, DVDs DVDs, Vinyls Vinyls, DeluxeEditions DeluxeEditions, FanMerchandise FanMerchandise){
+        public MusicShop(CDs CDs, DVDs DVDs, Vinyls Vinyls, DeluxeEditions DeluxeEditions, FanMerchandise FanMerchandise)
+        {
             this.CDs = CDs;
             this.DVDs = DVDs;
             this.Vinyls = Vinyls;

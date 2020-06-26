@@ -4,9 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MusicStore.Models
 {
-    public class Vinyl
+    public class VinylModel
     {
-        public Vinyl(){
+        public VinylModel()
+        {
             this.Vinyl_album_name = new Vinyl_AlbumName();
             this.Vinyl_artist_name = new Vinyl_ArtistName();
             this.Vinyl_label_name = "";
@@ -15,7 +16,8 @@ namespace MusicStore.Models
             this.Vinyl_image = "";
         }
 
-        public Vinyl(Vinyl_AlbumName Vinyl_AlbumName, Vinyl_ArtistName Vinyl_ArtistName, string Vinyl_label_name, DateTime Vinyl_release_date, float Vinyl_price, string Vinyl_image){
+        public VinylModel(Vinyl_AlbumName Vinyl_AlbumName, Vinyl_ArtistName Vinyl_ArtistName, string Vinyl_label_name, DateTime Vinyl_release_date, float Vinyl_price, string Vinyl_image)
+        {
             this.Vinyl_album_name = Vinyl_AlbumName;
             this.Vinyl_artist_name = Vinyl_ArtistName;
             this.Vinyl_label_name = Vinyl_label_name;
@@ -25,9 +27,11 @@ namespace MusicStore.Models
         }
 
         [XmlElement ("Vinyl_album_name")]
+        [Required]
         public Vinyl_AlbumName Vinyl_album_name { get; set; }
 
         [XmlElement ("Vinyl_artist_name")]
+        [Required]
         public Vinyl_ArtistName Vinyl_artist_name { get; set; }
         public string Vinyl_label_name { get; set; }
 
@@ -35,6 +39,7 @@ namespace MusicStore.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Vinyl_release_date { get; set; }
 
+        [Required]
         public float Vinyl_price { get; set; }
 
         public string Vinyl_image { get; set; }

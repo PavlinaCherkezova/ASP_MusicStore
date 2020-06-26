@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/C:/Users/polic/Desktop/uni/asp/MusicStore/XSD%20schema/MusicStore.xsd">
+    <DVDs>
+        <DVD>
+            <DVD_album_name>Just Cause Y'all Waited 2</DVD_album_name>
+            <DVD_artist_name autograph="true">Lil Durk</DVD_artist_name>
+            <DVD_label_name>Sony</DVD_label_name>
+            <DVD_release_date>2019-05-04</DVD_release_date>
+            <DVD_price>75</DVD_price>
+            <DVD_image>durk.jpg</DVD_image>
+        </DVD>
+    </DVDs>
+    <FanMerchandise>
+        <T-shirts>
+            <T-shirt>
+                <T_shirt_artist_name size="6">Rod Wave</T_shirt_artist_name>
+                <T-shirt_price>42</T-shirt_price>
+                <T-shirt_image>wave274.jpg</T-shirt_image>
+            </T-shirt>
+            <T-shirt>
+                <T_shirt_artist_name color="gray" size="7">Lil Mosey</T_shirt_artist_name>
+                <T-shirt_price>59</T-shirt_price>
+                <T-shirt_image>mosey848.jpg</T-shirt_image>
+            </T-shirt>
+        </T-shirts>
+    </FanMerchandise>
+</Musicshop>

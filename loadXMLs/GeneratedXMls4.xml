@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/C:/Users/polic/Desktop/uni/asp/MusicStore/XSD%20schema/MusicStore.xsd">
+    <Vinyls>
+        <Vinyl>
+            <Vinyl_album_name numberSongs="8">GoodbyeGood Riddance</Vinyl_album_name>
+            <Vinyl_artist_name autograph="false">Juice Wrld</Vinyl_artist_name>
+            <Vinyl_label_name>Universal</Vinyl_label_name>
+            <Vinyl_release_date>2005-05-04</Vinyl_release_date>
+            <Vinyl_price>39</Vinyl_price>
+            <Vinyl_image>riddance.jpg</Vinyl_image>
+        </Vinyl>
+        <Vinyl>
+            <Vinyl_album_name>Goldmine</Vinyl_album_name>
+            <Vinyl_artist_name autograph="true">Gabby Barrett</Vinyl_artist_name>
+            <Vinyl_label_name>Sun</Vinyl_label_name>
+            <Vinyl_release_date>2006-05-04</Vinyl_release_date>
+            <Vinyl_price>59</Vinyl_price>
+            <Vinyl_image>godmine.jpg</Vinyl_image>
+        </Vinyl>
+    </Vinyls>
+    <DeluxeEditions>
+        <DeluxeEdition>
+            <Deluxe_album_name numberAlbums="2" numberSongs="19">When We All Fall Asleep, Where Do We Go?</Deluxe_album_name>
+            <Deluxe_artist_name autograph="false">Billie Eilish</Deluxe_artist_name>
+            <Deluxe_label_name>Universal</Deluxe_label_name>
+            <Deluxe_release_date>2019-05-04</Deluxe_release_date>
+            <Deluxe_price>27.5</Deluxe_price>
+            <Deluxe_image>billie.jpg</Deluxe_image>
+        </DeluxeEdition>
+    </DeluxeEditions>
+</Musicshop>

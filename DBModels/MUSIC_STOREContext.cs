@@ -68,7 +68,7 @@ namespace MusicStore.DBModels
 
                 entity.Property(e => e.ReleaseDate)
                     .HasColumnName("release_date")
-                    .HasColumnType("date");
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<DeluxeEdition>(entity =>
@@ -107,7 +107,7 @@ namespace MusicStore.DBModels
 
                 entity.Property(e => e.ReleaseDate)
                     .HasColumnName("release_date")
-                    .HasColumnType("date");
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<Dvd>(entity =>
@@ -146,7 +146,7 @@ namespace MusicStore.DBModels
 
                 entity.Property(e => e.ReleaseDate)
                     .HasColumnName("release_date")
-                    .HasColumnType("date");
+                    .HasColumnType("datetime");
             });
 
             modelBuilder.Entity<TShirt>(entity =>
@@ -160,8 +160,6 @@ namespace MusicStore.DBModels
                     .HasColumnName("artist_name")
                     .HasMaxLength(400)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Autograph).HasColumnName("autograph");
 
                 entity.Property(e => e.Color)
                     .HasColumnName("color")
@@ -212,7 +210,7 @@ namespace MusicStore.DBModels
 
                 entity.Property(e => e.ReleaseDate)
                     .HasColumnName("release_date")
-                    .HasColumnType("date");
+                    .HasColumnType("datetime");
             });
 
             OnModelCreatingPartial(modelBuilder);

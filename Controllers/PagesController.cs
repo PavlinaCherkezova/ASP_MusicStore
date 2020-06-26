@@ -1,29 +1,34 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using MusicStore.Models;
 using MusicStore.Services;
 using System.IO;
-using System.Collections;
-
+using Microsoft.Extensions.Configuration;
+using System.Net;
 
 namespace MusicStore.Controllers
 {
     public class PagesController : Controller
     {
-        private const string loadedXMLsLocation = "C:/Users/polic/Desktop/uni/asp/MusicStore/loadXMLs";
-        private const string XSDSchema = "C:/Users/polic/Desktop/uni/asp/MusicStore/XSD schema/MusicStore.xsd";
+        private static Dictionary<string, FileStatus> fileStatuses = new Dictionary<string ,FileStatus>();
         private readonly DBAccsessService _dBAccsessService;
-        private static List<FileStatus> file
-        public PagesController(DBAccsessService dBAccsessService)
+        private readonly IConfiguration _config;
+
+        private string LoadedXMLsLocation { get; set; }
+        private string GeneratedXMLsLocation { get; set; }
+        private string XSDSchema { get; set; }
+        public PagesController(DBAccsessService dBAccsessService, IConfiguration config)
         {
             _dBAccsessService = dBAccsessService;
+            _config = config;
+            LoadedXMLsLocation = _config.GetValue<string>("XmlLoadedFilesPath");
+            GeneratedXMLsLocation = _config.GetValue<string>("XmlGeneratedFilesPath");
+            XSDSchema = _config.GetValue<string>("XSDSchema");
         }
-        public IActionResult Create ()
+        
+        public IActionResult Create()
         {
             return View();
         }
@@ -34,88 +39,139 @@ namespace MusicStore.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult CreateNewEntity (MusicShopForm input)
-        {
-            MusicShop entity = new MusicShop();
-            
-            if(input.CD != null) {
-                entity.CDs.CDList.Add(input.CD);
-            }
-            if(input.DVD != null) {
-                entity.DVDs.DVDList.Add(input.DVD);
-            }
-            if(input.Vinyl != null) {
-                entity.Vinyls.VinylList.Add(input.Vinyl);
-            }
-            if(input.DeluxeEdition != null) {
-                entity.DeluxeEditions.DeluxeEditionList.Add(input.DeluxeEdition);
-            }
-            if(input.T_Shirt != null) {
-                entity.FanMerchandise.TShirts.TShirtList.Add(input.T_Shirt);
-            }
-
-            saveData(entity);
-            ModelState.Clear();
-
-            return View("Form");
-        }
-
-        private void saveData (MusicShop entity) {
-            var directory = new DirectoryInfo("C:/Users/polic/Desktop/uni/asp/MusicStore/genaretedXMLs");
-            var guid = Guid.NewGuid().ToString();
-            var fileName = $"{directory}/xml_{guid}.xml";
-
-            Serialization.serialize(entity, fileName);
-            if (entity.CDs != null && entity.CDs.CDList != null)
-            {
-                foreach (var cd in entity.CDs.CDList)
-                {
-                    _dBAccsessService.SaveCDToDB(cd);
-                }
-                _dBAccsessService.saveChanges(); //fileStatus - isAlreadyAdded
-            }
-       
-        }
-
-        [HttpGet]
-        public ActionResult LoadFiles () {
-            string[] fileNames = Directory.GetFiles(loadedXMLsLocation).Select(file => Path.GetFileName(file)).ToArray();
-            List<FileStatus> fileStatuses = new List<FileStatus>();
-            var foo = new FileStatus();
-
-            foreach (string fileName in fileNames){
-                FileStatus entity = null;
-                
-                if(ValidateXMLByScheme.isValidated(XSDSchema, fileName)){
-                    MusicShop DBentity = Serialization.deserialize(fileName);
-                    if(DBentity.CDs != null && DBentity.CDs.CDList != null)
-                    {
-                        foreach(var cd in DBentity.CDs.CDList)
-                        {
-                            _dBAccsessService.SaveCDToDB(cd);
-                        }
-                        _dBAccsessService.saveChanges();
-                    }
-                    //if(DBAccsessService.saveToDB(DBentity)){
-                    //    entity = new FileStatus(fileName, "Success", true, true);
-                    //}else {
-                    //    entity = new FileStatus(fileName, "Success", true, false);
-                    //}
-                }else {
-                   // entity = new FileStatus(fileName, "Failure", false, false);
-                }
-
-                fileStatuses.Add(entity);
-            }
-
-            return View("GetLoadedFiles", foo);
-        }
         [HttpGet]
         public ActionResult GetLoadedFiles()
         {
-            var foo = new FileStatus();
-            return View(foo); 
+            var fileStatus = new FileStatus();
+            return View(fileStatus);
+        }
+
+        [HttpPost]
+        public ActionResult CreateNewEntity(MusicShopForm input)
+        {
+                MusicShop entity = new MusicShop();
+
+                if (input.CD != null)
+                {
+                    entity.CDs.CDList.Add(input.CD);
+                }
+                if (input.DVD != null)
+                {
+                    entity.DVDs.DVDList.Add(input.DVD);
+                }
+                if (input.Vinyl != null)
+                {
+                    entity.Vinyls.VinylList.Add(input.Vinyl);
+                }
+                if (input.DeluxeEdition != null)
+                {
+                    entity.DeluxeEditions.DeluxeEditionList.Add(input.DeluxeEdition);
+                }
+                if (input.T_Shirt != null)
+                {
+                    entity.FanMerchandise.TShirts.TShirtList.Add(input.T_Shirt);
+                }
+
+                SaveData(entity);
+                ModelState.Clear();
+
+                return View("GetLoadedFiles", fileStatuses);
+        }
+
+        private void SaveData(MusicShop entity) {
+            var directory = new DirectoryInfo(GeneratedXMLsLocation);
+            var guid = Guid.NewGuid().ToString();
+            var fileName = $"xml_{guid}.xml";
+            var filePath = $"{directory}/{fileName}";
+            
+            Serialization.Serialize(entity, filePath);
+            SendToDB(entity, fileName);
+        }
+
+        [HttpGet]
+        public ActionResult LoadFiles() {
+            var fileNames = Directory.GetFiles(LoadedXMLsLocation).Select(file => Path.GetFileName(file)).ToArray();
+
+            foreach (string fileName in fileNames) 
+            {
+                var fullFilePath = LoadedXMLsLocation + fileName;
+                if (ValidateXMLByScheme.isValidated(XSDSchema, fullFilePath)) 
+                {
+                    MusicShop DBentity = Serialization.Deserialize(fullFilePath);
+                    SendToDB(DBentity, fileName);
+                } 
+                else {
+                    if(!fileStatuses.Keys.Contains(fileName))
+                    {
+                        fileStatuses.Add(fileName, new FileStatus
+                        {
+                            fileName = fileName,
+                            isValid = false,
+                            isAlreadyAdded = false,
+                            status = "Failed"
+                        });
+                    } 
+                }
+            }
+
+            return View("GetLoadedFiles", fileStatuses);
+        }
+
+        public void SendToDB(MusicShop DBentity, string FileName)
+        {
+            bool isEntitiyExisting = true;
+            if (DBentity.CDs != null && DBentity.CDs.CDList != null)
+            {
+                foreach (var cd in DBentity.CDs.CDList)
+                {
+                    isEntitiyExisting = _dBAccsessService.SaveCDToDB(cd);
+                }
+            }
+
+            if (DBentity.DVDs != null && DBentity.DVDs.DVDList != null)
+            {
+                foreach (var dvd in DBentity.DVDs.DVDList)
+                {
+                    isEntitiyExisting =_dBAccsessService.SaveDVDToDB(dvd);
+                }
+            }
+
+            if (DBentity.Vinyls != null && DBentity.Vinyls.VinylList != null)
+            {
+                foreach (var vinyl in DBentity.Vinyls.VinylList)
+                {
+                    isEntitiyExisting = _dBAccsessService.SaveVinylToDB(vinyl);
+                }
+            }
+
+            if (DBentity.DeluxeEditions != null && DBentity.DeluxeEditions.DeluxeEditionList != null)
+            {
+                foreach (var deluxe in DBentity.DeluxeEditions.DeluxeEditionList)
+                {
+                    isEntitiyExisting =  _dBAccsessService.SaveDeluxeToDB(deluxe);
+                }
+            }
+
+            if (DBentity.FanMerchandise != null && DBentity.FanMerchandise.TShirts != null && DBentity.FanMerchandise.TShirts.TShirtList != null)
+            {
+                foreach (var t_Shirt in DBentity.FanMerchandise.TShirts.TShirtList)
+                {
+                    isEntitiyExisting = _dBAccsessService.SaveTShirtToDB(t_Shirt);
+                }
+            }
+
+            var changesSaved = _dBAccsessService.SaveChanges();
+            var isAddedToDB = !isEntitiyExisting && changesSaved ? true : false;
+            if (!fileStatuses.Keys.Contains(FileName))
+            {
+                fileStatuses.Add(FileName, new FileStatus
+                {
+                    fileName = FileName,
+                    isValid = true,
+                    isAlreadyAdded = !isAddedToDB,
+                    status = isAddedToDB ? "Success" : "Failed"
+                });
+            }
         }
     }
 }

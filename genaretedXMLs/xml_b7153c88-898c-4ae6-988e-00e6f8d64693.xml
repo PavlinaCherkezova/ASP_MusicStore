@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CDs />
+  <DVDs>
+    <DVD>
+      <DVD_album_name numberSongs="0">skjvks</DVD_album_name>
+      <DVD_artist_name autograph="false">lkscl</DVD_artist_name>
+      <DVD_release_date>2020-06-26T18:00:02.8718903+03:00</DVD_release_date>
+      <DVD_price>0</DVD_price>
+    </DVD>
+  </DVDs>
+  <Vinyls />
+  <DeluxeEditions />
+  <FanMerchandise>
+    <T-shirts />
+  </FanMerchandise>
+</Musicshop>

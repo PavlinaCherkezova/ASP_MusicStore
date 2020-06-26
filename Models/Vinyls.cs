@@ -7,6 +7,6 @@ namespace MusicStore.Models
     public class Vinyls
     {
         [XmlElement ("Vinyl")]
-        public List<Vinyl> VinylList = new List<Vinyl>();
+        public List<VinylModel> VinylList = new List<VinylModel>();
     }
 }

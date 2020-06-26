@@ -18,7 +18,6 @@ C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\MusicStore.Tag
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\MusicStore.TagHelpers.output.cache
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\MusicStore.RazorCoreGenerate.cache
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -35,7 +34,6 @@ C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\MusicStore.gen
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\MusicStore.csproj.CopyComplete
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Pages\Form.cshtml.g.cs
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Pages\Create.cshtml.g.cs
-C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Pages\LoadedFiles.cshtml.g.cs
 C:\Users\polic\Desktop\uni\asp\MusicStore\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\polic\Desktop\uni\asp\MusicStore\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
 C:\Users\polic\Desktop\uni\asp\MusicStore\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
@@ -60,3 +58,4 @@ C:\Users\polic\Desktop\uni\asp\MusicStore\bin\Debug\netcoreapp3.1\runtimes\win\l
 C:\Users\polic\Desktop\uni\asp\MusicStore\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\polic\Desktop\uni\asp\MusicStore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\MusicStore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\polic\Desktop\uni\asp\MusicStore\obj\Debug\netcoreapp3.1\Razor\Views\Pages\GetLoadedFiles.cshtml.g.cs

@@ -1,7 +1,321 @@
+@model MusicShopForm
 @{
     ViewBag.Title = "Create";
 }
- 
-<h2>View Details</h2>
- 
-<strong>Cd</strong> : @ViewData["DVD.DVD_artist_name"]<br />
+
+<h1>Create CD</h1>
+<hr style="height:1px;color:whitesmoke;background-color:whitesmoke;" />
+@using (Html.BeginForm("CreateNewEntity", "Pages", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_artist_name.CD_artist_name, "Artist name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_artist_name.CD_artist_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.CD.CD_artist_name.CD_artist_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_artist_name.autograph, "Autograph", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_artist_name.autograph, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_album_name.CD_album_name, "Album name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_album_name.CD_album_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.CD.CD_album_name.CD_album_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_album_name.number_songs, "Number songs", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_album_name.number_songs, new { htmlAttributes = new { @type = "number", @min = "0", @step = "1", @value = "0" } })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_label_name, "Label name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_label_name, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_release_date, "Release Date", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_release_date, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_price, "Price", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_price, new { htmlAttributes = new { @type = "number", @min = "0", @step = "0.01", @value = "0", @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.CD.CD_price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.CD.CD_image, "Image", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.CD.CD_image, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <h1>Create DVD</h1>
+    <hr style="height:1px;color:whitesmoke;background-color:whitesmoke;" />
+
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_artist_name.DVD_artist_name, "Artist name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_artist_name.DVD_artist_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.DVD.DVD_artist_name.DVD_artist_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_artist_name.autograph, "Autograph", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_artist_name.autograph, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_album_name.DVD_albumName, "Album name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_album_name.DVD_albumName, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.DVD.DVD_album_name.DVD_albumName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_album_name.number_songs, "Number songs", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_album_name.number_songs, new { htmlAttributes = new { @type = "number", @min = "0", @step = "1", @value = "0" } })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_label_name, "Label name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_label_name, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_release_date, "Release Date", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_release_date, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_price, "Price", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_price, new { htmlAttributes = new { @type = "number", @min = "0", @step = "0.01", @value = "0", @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.DVD.DVD_price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DVD.DVD_image, "Image", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DVD.DVD_image, new { @class = "form-control" })
+        </div>
+    </div>
+    <hr />
+
+    <h1>Create Deluxe Edition</h1>
+    <hr style="height:1px;color:whitesmoke;background-color:whitesmoke;" />
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_artist_name.Deluxe_artist_name, "Artist name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_artist_name.Deluxe_artist_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.DeluxeEdition.Deluxe_artist_name.Deluxe_artist_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_artist_name.autograph, "Autograph", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_artist_name.autograph, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_album_name.Deluxe_album_name, "Album name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_album_name.Deluxe_album_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.DeluxeEdition.Deluxe_album_name.Deluxe_album_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_album_name.number_songs, "Number songs", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_album_name.number_songs, new { htmlAttributes = new { @type = "number", @min = "0", @step = "1", @value = "0" } })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_label_name, "Label name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_label_name, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_release_date, "Release Date", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_release_date, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_price, "Price", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_price, new { htmlAttributes = new { @type = "number", @min = "0", @step = "0.01", @value = "0", @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.DeluxeEdition.Deluxe_price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.DeluxeEdition.Deluxe_image, "Image", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.DeluxeEdition.Deluxe_image, new { @class = "form-control" })
+        </div>
+    </div>
+    <hr />
+
+    <h1>Create Vinyl</h1>
+    <hr style="height:1px;color:whitesmoke;background-color:whitesmoke;" />
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_artist_name.Vinyl_artist_name, "Artist name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_artist_name.Vinyl_artist_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.Vinyl.Vinyl_artist_name.Vinyl_artist_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_artist_name.autograph, "Autograph", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_artist_name.autograph, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_album_name.Vinyl_album_name, "Album name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_album_name.Vinyl_album_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.Vinyl.Vinyl_album_name.Vinyl_album_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_album_name.number_songs, "Number songs", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_album_name.number_songs, new { htmlAttributes = new { @type = "number", @min = "0", @step = "1", @value = "0" } })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_label_name, "Label name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_label_name, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_release_date, "Release Date", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_release_date, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_price, "Price", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_price, new { htmlAttributes = new { @type = "number", @min = "0", @step = "0.01", @value = "0", @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.Vinyl.Vinyl_price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.Vinyl.Vinyl_image, "Image", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.Vinyl.Vinyl_image, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <hr />
+
+    <h1>Create Fan Merchandise</h1>
+    <h2>Create T-Shirt</h2>
+    <hr style="height:1px;color:whitesmoke;background-color:whitesmoke;" />
+    <div class="form-group row">
+        @Html.LabelFor(x => x.T_Shirt.TShirt_ArtistName.T_shirt_artist_name, "Artist name", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.T_Shirt.TShirt_ArtistName.T_shirt_artist_name, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.T_Shirt.TShirt_ArtistName.T_shirt_artist_name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.T_Shirt.TShirt_ArtistName.color, "Color", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.T_Shirt.TShirt_ArtistName.color, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.T_Shirt.TShirt_ArtistName.size, "Size", new { @class = "col-sm-2 col-form-label" })
+
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.T_Shirt.TShirt_ArtistName.size, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.T_Shirt.T_shirt_price, "Price", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.T_Shirt.T_shirt_price, new { htmlAttributes = new { @type = "number", @min = "0", @step = "0.01", @value = "0", @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.T_Shirt.T_shirt_price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group row">
+        @Html.LabelFor(x => x.T_Shirt.T_shirt_image, "Image", new { @class = "col-sm-2 col-form-label" })
+        <div class="col-sm-10">
+            @Html.EditorFor(x => x.T_Shirt.T_shirt_image, new { htmlAttributes = new { @class = "col-sm-3 col-form-label", required = "required", title = "Field is requried" } })
+            @Html.ValidationMessageFor(x => x.T_Shirt.T_shirt_image, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <input type="submit" class="btn btn-success btn-submit-form" value="CREATE">
+}
+<hr />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

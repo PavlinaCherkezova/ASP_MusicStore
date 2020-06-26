@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <CDs>
-        <CD>
+    
             <CD_album_name> Rebel Heart</CD_album_name>
             <CD_artist_name>Madonna</CD_artist_name>
             <CD_label_name>Sony Music</CD_label_name>
             <CD_release_date>2009-05-04</CD_release_date>
             <CD_price>14.50</CD_price>
             <CD_image>madonna-rebel-heart.jpg</CD_image>
-        </CD>
     </CDs>
     <DeluxeEditions>
         <DeluxeEdition>

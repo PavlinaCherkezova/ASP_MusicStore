@@ -1,4 +1,3 @@
-using System;
 using System.Xml.Schema;
 using System.Xml.Linq;
 
@@ -12,7 +11,7 @@ namespace MusicStore.Services
             schemaSet.Add("", XSDName);
 
             XDocument XMLfile = new XDocument();
-            XMLfile = XDocument.Load(fileName);
+            XMLfile = XDocument.Load(fileName); 
 
             if(XMLfile != null){
                 XMLfile.Validate(schemaSet, (sc, ex) => {

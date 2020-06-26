@@ -1,3 +1,45 @@
-@model FileStatus
+@model Dictionary<string, FileStatus>
 
+<h2>All files statuses</h2>
 
+<table class="table table-bordered table-hover" style="background-color: whitesmoke">
+    <tr style="background-color: lightgray">
+        <th>File name</th>
+        <th>File status</th>
+        <th>File validation by Scheme</th>
+        <th>File saved in DB</th>
+    </tr>
+
+    @foreach (var file in Model)
+    {
+<tr>
+    <td>@file.Key </td>
+    <td>@file.Value.status </td>
+
+    @if (file.Value.isValid)
+    {
+        <td><font color="green">Valid</font></td>
+    }
+    else
+    {
+        <td><font color="red">Not valid</font></td>
+    }
+
+    @if (file.Value.isValid)
+    {
+        if (file.Value.isAlreadyAdded)
+        {
+            <td><font color="red">File is already added</font></td>
+        }
+        else
+        {
+            <td><font color="green">File is added</font></td>
+        }
+    }
+    else
+    {
+        <td><font color="red">File is not added</font></td>
+    }
+</tr>
+    }
+</table>

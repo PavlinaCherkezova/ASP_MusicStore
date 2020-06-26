@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/C:/Users/polic/Desktop/uni/asp/MusicStore/XSD%20schema/MusicStore.xsd">
+    <DVDs>
+        <DVD>
+            <DVD_album_name numberSongs="20">Bigger Love</DVD_album_name>
+            <DVD_artist_name autograph="true">John Legend</DVD_artist_name>
+            <DVD_label_name>Sony</DVD_label_name>
+            <DVD_release_date>2019-05-04</DVD_release_date>
+            <DVD_price>19</DVD_price>
+            <DVD_image>legend.jpg</DVD_image>
+        </DVD>
+    </DVDs>
+    <Vinyls>
+        <Vinyl>
+            <Vinyl_album_name>Homegrown</Vinyl_album_name>
+            <Vinyl_artist_name autograph="false">Neil Young</Vinyl_artist_name>
+            <Vinyl_label_name>Sony</Vinyl_label_name>
+            <Vinyl_release_date>1998-05-04</Vinyl_release_date>
+            <Vinyl_price>49</Vinyl_price>
+            <Vinyl_image>young.jpg</Vinyl_image>
+        </Vinyl>
+    </Vinyls>
+    <FanMerchandise>
+        <T-shirts>
+            <T-shirt>
+                <T_shirt_artist_name color="gray" size="4">John legend</T_shirt_artist_name>
+                <T-shirt_price>23</T-shirt_price>
+                <T-shirt_image>legend12.jpg</T-shirt_image>
+            </T-shirt>
+        </T-shirts>
+    </FanMerchandise>
+</Musicshop>

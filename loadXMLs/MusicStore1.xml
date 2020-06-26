@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Musicshop>
     <CDs>
         <CD>
             <CD_album_name>Vita Ce Ne </CD_album_name>
@@ -20,7 +20,7 @@
     </CDs>
     <DVDs>
         <DVD>
-            <DVD_album_name>Songs From The Road</DVD_album_name>
+            <DVD_album_name>песни</DVD_album_name>
             <DVD_artist_name>Leonard Cohen</DVD_artist_name>
             <DVD_label_name>Virginia Records</DVD_label_name>
             <DVD_release_date>2004-05-04</DVD_release_date>

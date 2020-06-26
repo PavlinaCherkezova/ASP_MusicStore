@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="file:/C:/Users/polic/Desktop/uni/asp/MusicStore/XSD%20schema/MusicStore.xsd">
+    <CDs>
+        <CD>
+            <CD_album_name numberSongs="19">YHLQMDLG</CD_album_name>
+            <CD_artist_name autograph="false">Bad Bunny</CD_artist_name>
+            <CD_label_name>Sony</CD_label_name>
+            <CD_release_date>2020-05-04</CD_release_date>
+            <CD_price>30</CD_price>
+            <CD_image>bunny.jpg</CD_image>
+        </CD>
+    </CDs>
+    <Vinyls>
+        <Vinyl>
+            <Vinyl_album_name>Please Excuse Me For Being Antisocial</Vinyl_album_name>
+            <Vinyl_artist_name autograph="false">Roddy Ricch</Vinyl_artist_name>
+            <Vinyl_label_name>Universal</Vinyl_label_name>
+            <Vinyl_release_date>2018-05-04</Vinyl_release_date>
+            <Vinyl_price>18</Vinyl_price>
+            <Vinyl_image>rody.jpg</Vinyl_image>
+        </Vinyl>
+    </Vinyls>
+    <DeluxeEditions>
+        <DeluxeEdition>
+            <Deluxe_album_name numberSongs="18">What You See Is What You Get</Deluxe_album_name>
+            <Deluxe_artist_name autograph="false">Luke Combs</Deluxe_artist_name>
+            <Deluxe_label_name>Sun</Deluxe_label_name>
+            <Deluxe_release_date>2019-05-04</Deluxe_release_date>
+            <Deluxe_price>17</Deluxe_price>
+            <Deluxe_image>luke.jpg</Deluxe_image>
+        </DeluxeEdition>
+    </DeluxeEditions>
+</Musicshop>

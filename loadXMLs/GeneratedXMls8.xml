@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/polic/Desktop/uni/asp/MusicStore/XSD%20schema/MusicStore.xsd">
+    <CDs>
+        <CD>
+            <CD_album_name>Artist 2.0</CD_album_name>
+            <CD_artist_name autograph="false">A Boogie wit da Hoodie</CD_artist_name>
+            <CD_label_name>Sony</CD_label_name>
+            <CD_release_date>2006-05-04</CD_release_date>
+            <CD_price>0</CD_price>
+            <CD_image>boogie.jpg</CD_image>
+        </CD>
+    </CDs>
+    <DVDs>
+        <DVD>
+            <DVD_album_name numberSongs="9">Lamb Of God</DVD_album_name>
+            <DVD_artist_name autograph="true">Lamb Of God</DVD_artist_name>
+            <DVD_label_name>Universal</DVD_label_name>
+            <DVD_release_date>2019-05-04</DVD_release_date>
+            <DVD_price>16.5</DVD_price>
+            <DVD_image>lamb.jpg</DVD_image>
+        </DVD>
+    </DVDs>
+    <Vinyls>
+    </Vinyls>
+    <DeluxeEditions>
+        <DeluxeEdition>
+            <Deluxe_album_name numberAlbums="2">High Off Life</Deluxe_album_name>
+            <Deluxe_artist_name autograph="false">Future</Deluxe_artist_name>
+            <Deluxe_label_name>Universal</Deluxe_label_name>
+            <Deluxe_release_date>2019-05-04</Deluxe_release_date>
+            <Deluxe_price>67</Deluxe_price>
+            <Deluxe_image>kylie-christmas.jpg</Deluxe_image>
+        </DeluxeEdition>
+    </DeluxeEditions>
+    <FanMerchandise>
+        <T-shirts>
+            <T-shirt>
+                <T_shirt_artist_name size="4">Future</T_shirt_artist_name>
+                <T-shirt_price>15</T-shirt_price>
+                <T-shirt_image>bring-me-the-horizon.jpg</T-shirt_image>
+            </T-shirt>
+        </T-shirts>
+    </FanMerchandise>
+</Musicshop>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Musicshop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/polic/Desktop/uni/asp/MusicStore/XSD%20schema/MusicStore.xsd">
+    <CDs>
+        <CD>
+            <CD_album_name numberSongs="15">Rough and Rowdy Ways</CD_album_name>
+            <CD_artist_name autograph="false">Bob Dylan</CD_artist_name>
+            <CD_label_name>Sony</CD_label_name>
+            <CD_release_date>2018-05-05</CD_release_date>
+            <CD_price>23</CD_price>
+            <CD_image>dylan.jpg</CD_image>
+        </CD>
+    </CDs>
+    <Vinyls>
+        <Vinyl>
+            <Vinyl_album_name>Dark Lane Demo Tapes</Vinyl_album_name>
+            <Vinyl_artist_name autograph="false">Drake</Vinyl_artist_name>
+            <Vinyl_label_name>Sony</Vinyl_label_name>
+            <Vinyl_release_date>2020-10-04</Vinyl_release_date>
+            <Vinyl_price>50</Vinyl_price>
+            <Vinyl_image>drake.jpg</Vinyl_image>
+        </Vinyl>
+    </Vinyls>
+    <FanMerchandise>
+        <T-shirts>
+            <T-shirt>
+                <T_shirt_artist_name color="blue">The Weeknd</T_shirt_artist_name>
+                <T-shirt_price>20</T-shirt_price>
+                <T-shirt_image>nirvana-live-at-paramount.jpg</T-shirt_image>
+            </T-shirt>
+        </T-shirts>
+    </FanMerchandise>
+</Musicshop>

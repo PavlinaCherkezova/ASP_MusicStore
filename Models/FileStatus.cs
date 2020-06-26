@@ -1,6 +1,3 @@
-using System;
-using System.Xml.Serialization;
-
 namespace MusicStore.Models
 {
     public class FileStatus {
@@ -8,11 +5,10 @@ namespace MusicStore.Models
         public string status { get; set; }
         public bool isValid { get; set; }
         public bool isAlreadyAdded { get; set; }
-        public FileStatus(){
+        public FileStatus()
+        {
             this.fileName = "";
             this.status = "";
-            this.isValid = false;
-            this.isAlreadyAdded = false;
         }
     }
 }

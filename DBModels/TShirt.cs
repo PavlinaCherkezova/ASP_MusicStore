@@ -9,7 +9,6 @@ namespace MusicStore.DBModels
         public string ArtistName { get; set; }
         public string Color { get; set; }
         public int Size { get; set; }
-        public bool? Autograph { get; set; }
         public double Price { get; set; }
         public string TShirtImage { get; set; }
     }

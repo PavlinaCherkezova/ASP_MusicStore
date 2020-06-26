@@ -6,7 +6,11 @@ namespace MusicStore.Models
 {
     public class TShirts
     {
+        public TShirts()
+        {
+            TShirtList = new List<T_Shirt>();
+        }
         [XmlElement ("T-shirt")]
-        public List<T_Shirt> TShirtList = new List<T_Shirt>();
+        public List<T_Shirt> TShirtList { get; set; }
     }
 }
